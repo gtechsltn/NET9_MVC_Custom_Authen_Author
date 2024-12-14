@@ -198,6 +198,7 @@ cd MyMvc
 dotnet new mvc -f net9.0 --use-program-main --use-local-db --auth None
 dotnet add package Microsoft.AspNetCore.Authentication
 dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+dotnet add package Swashbuckle.AspNetCore
 dotnet build
 dotnet test
 dotnet run
@@ -222,6 +223,12 @@ Bearer validtoken
 ```
 
 ## DbContext and Product table
+
+```
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
 
 ```
 //appsettings.json
