@@ -271,6 +271,11 @@ public class ApplicationDbContext : DbContext
     {
     }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Server=localhost;Database=MyMvcDb;Trusted_Connection=True;");
+    }
+
     public DbSet<Product> Products { get; set; }
 }
 ```
@@ -279,4 +284,16 @@ public class ApplicationDbContext : DbContext
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 dotnet run
+```
+
+```
+public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
+{
+    public ApplicationDbContext CreateDbContext(string[] args)
+    {
+        var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+        optionsBuilder.UseSqlServer("Server=localhost;Database=MyMvcDb;Trusted_Connection=True;");
+        return new ApplicationDbContext(optionsBuilder.Options);
+    }
+}
 ```
