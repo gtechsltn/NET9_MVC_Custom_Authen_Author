@@ -1,5 +1,7 @@
 # Custom Authentication and Authorization in an ASP.NET Core MVC + Web API using .NET 9.0
 
+# 1/ Custom Authentication and Authorization
+
 To implement custom Authentication and Authorization in an ASP.NET Core MVC + Web API using .NET 9.0, you'll need to follow several steps.
 
 This example will demonstrate how to create a simple custom authentication scheme where users can log in with a username and password.
@@ -182,7 +184,7 @@ Authorization: Bearer validtoken
 
 You should receive a response from the protected endpoint if the correct token is provided.
 
-# Conclusion
+## Conclusion
 
 You have successfully implemented custom authentication and authorization in an ASP.NET Core MVC Web API application using .NET 9.0.
 
@@ -190,7 +192,7 @@ This example uses a simplified token validation mechanism for demonstration purp
 
 In a real application, you should implement proper token generation, storage, validation, and enhance security by hashing passwords, using HTTPS, and more.
 
-# ASP.NET Core MVC
+# 2/ ASP.NET Core MVC
 
 ```
 md MyMvc
@@ -222,7 +224,7 @@ Click into button Authorize and enter the Bearer JWT as the following:
 Bearer validtoken
 ```
 
-## DbContext and Product table
+# 3/ EF Core + DbContext and Product table
 
 ```
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
@@ -309,3 +311,53 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
 ```
 "DefaultConnection": "Server=localhost;Database=MyMvcDb;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
 ```
+
+# 4/ Authentication with User table
+
+```
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+dotnet add package System.IdentityModel.Tokens.Jwt
+```
+
+```
+dotnet ef migrations add Authenticate_User_Table
+dotnet ef database update
+```
+
+## Register
+
+POST https://localhost:5001/api/auth/register
+
+Content-Type: application/json
+
+```
+{
+  "username": "Admin",
+  "password": "Passw$rd@123"
+}
+```
+
+## Login
+
+POST https://localhost:5001/api/auth/login
+
+Content-Type: application/json
+
+```
+{
+  "username": "Admin",
+  "password": "Passw$rd@123"
+}
+```
+
+Token
+```
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwibmJmIjoxNzM0MTY1NzgwLCJleHAiOjE3MzQyNTIxODAsImlhdCI6MTczNDE2NTc4MH0.V8h2HadS3rbDEIoa1dFXrIn1vMwfVpXMSo0bgS2Tdfc"
+}
+```
+
+# References
+
+https://workik.com/project/74656/ai_scripts
