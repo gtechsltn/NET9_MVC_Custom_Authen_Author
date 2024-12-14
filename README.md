@@ -358,6 +358,25 @@ Token
 }
 ```
 
+# Multiples Authen (Api Key + JWT)
+
+For JWT Authentication:
+```
+GET https://localhost:5001/api/jwt
+Authorization: Bearer your_jwt_token_here
+```
+
+For API Key Authentication:
+```
+GET https://localhost:5001/api/apikey
+X-Api-Key: YourApiKey123
+```
+
+# Publish
+```
+dotnet publish -c Release -o C:\inetpub\wwwroot\MyMvcApp
+```
+
 # References
 
 https://workik.com/project/74656/ai_scripts
