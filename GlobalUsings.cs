@@ -1,0 +1,10 @@
+﻿global using Microsoft.AspNetCore.Authentication;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Design;
+global using Microsoft.OpenApi.Models;
+global using MyMvc.Data;
+global using MyMvc.Models;
+global using MyMvc.Services;
+global using System.Diagnostics;

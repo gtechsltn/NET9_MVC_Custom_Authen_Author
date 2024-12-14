@@ -1,7 +1,3 @@
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.OpenApi.Models;
-using MyMvc.Services;
-
 namespace MyMvc;
 
 public class Program
