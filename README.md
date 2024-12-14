@@ -234,7 +234,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 //appsettings.json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=MyApiDb;Trusted_Connection=True;"
+    "DefaultConnection": "Server=localhost;Database=MyMvcDb;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
   }
 }
 ```
@@ -271,6 +271,11 @@ public class ApplicationDbContext : DbContext
     {
     }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Server=localhost;Database=MyMvcDb;Trusted_Connection=True;");
+    }
+
     public DbSet<Product> Products { get; set; }
 }
 ```
@@ -279,4 +284,28 @@ public class ApplicationDbContext : DbContext
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 dotnet run
+```
+
+## Design-time DbContext Creation: From a design-time factory
+
+https://learn.microsoft.com/vi-vn/ef/core/cli/dbcontext-creation?tabs=dotnet-core-cli
+
+```
+public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
+{
+    public ApplicationDbContext CreateDbContext(string[] args)
+    {
+        var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+        optionsBuilder.UseSqlServer("Server=localhost;Database=MyMvcDb;Trusted_Connection=True;");
+        return new ApplicationDbContext(optionsBuilder.Options);
+    }
+}
+```
+
+```
+"DefaultConnection": "Server=localhost;Database=MyMvcDb;Trusted_Connection=True;"
+```
+
+```
+"DefaultConnection": "Server=localhost;Database=MyMvcDb;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
 ```
