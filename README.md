@@ -220,3 +220,56 @@ Click into button Authorize and enter the Bearer JWT as the following:
 ```
 Bearer validtoken
 ```
+
+## DbContext and Product table
+
+```
+//appsettings.json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=MyApiDb;Trusted_Connection=True;"
+  }
+}
+```
+
+```
+// Program.cs
+using Microsoft.EntityFrameworkCore;
+using MyApi.Data;
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddControllers();
+var app = builder.Build();
+
+app.UseHttpsRedirection();
+app.MapControllers();
+app.Run();
+```
+
+```
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+}
+
+public class ApplicationDbContext : DbContext
+{
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
+    {
+    }
+
+    public DbSet<Product> Products { get; set; }
+}
+```
+
+```
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+dotnet run
+```
