@@ -1,5 +1,17 @@
 # Custom Authentication and Authorization in an ASP.NET Core MVC + Web API using .NET 9.0
 
+https://github.com/gtechsltn/NF48_ConsoleApp_SQLServer_Logging_Debugging
+
+https://github.com/gtechsltn/EFCore_ConnectionString
+
+https://github.com/gtechsltn/DapperSelect
+
+https://github.com/gtechsltn/NET9
+
+https://github.com/gtechsltn/NET9/tree/master/NET9_ConsoleApp_Dapper_EFCore
+
+https://github.com/gtechsltn/NET9/tree/master/NET9_ConsoleApp_Logging_Log4Net
+
 # 1/ Custom Authentication and Authorization
 
 To implement custom Authentication and Authorization in an ASP.NET Core MVC + Web API using .NET 9.0, you'll need to follow several steps.
