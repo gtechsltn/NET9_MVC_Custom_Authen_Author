@@ -1,7 +1,3 @@
-using Microsoft.Extensions.Options;
-using System.Security.Claims;
-using System.Text.Encodings.Web;
-
 namespace MyMvc.Services;
 
 public class CustomAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>

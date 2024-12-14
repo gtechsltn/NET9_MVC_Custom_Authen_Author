@@ -1,8 +1,8 @@
-namespace MyMvc.Models
+namespace MyMvc.Models;
+
+public class User
 {
-    public class User
-    {
-        public string Username { get; set; }
-        public string Password { get; set; } // In a real application, this should be hashed
-    }
+    public int Id { get; set; }
+    public string Username { get; set; }
+    public string PasswordHash { get; set; } // Store hashed passwords
 }
