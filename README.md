@@ -201,8 +201,20 @@ dotnet test
 dotnet run
 ```
 
+How To Add JWT Bearer Token Authorization Functionality In Swagger? (Nov 30, 2021)
+
 https://www.c-sharpcorner.com/article/how-to-add-jwt-bearer-token-authorization-functionality-in-swagger/
+
+OAuth Bearer Token with Swagger UI — .NET 6.0 (Jan 6, 2023)
 
 https://medium.com/@deidra108/oauth-bearer-token-with-swagger-ui-net-6-0-86835e616deb
 
+# Testing
+
 https://localhost:7214/swagger/index.html
+
+Click into button Authorize and enter the Bearer JWT as the following:
+
+```
+Bearer validtoken
+```
