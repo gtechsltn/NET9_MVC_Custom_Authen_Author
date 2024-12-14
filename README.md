@@ -286,6 +286,10 @@ dotnet ef database update
 dotnet run
 ```
 
+## Design-time DbContext Creation: From a design-time factory
+
+https://learn.microsoft.com/vi-vn/ef/core/cli/dbcontext-creation?tabs=dotnet-core-cli
+
 ```
 public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
 {
