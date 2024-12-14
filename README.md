@@ -187,3 +187,16 @@ You have successfully implemented custom authentication and authorization in an 
 This example uses a simplified token validation mechanism for demonstration purposes.
 
 In a real application, you should implement proper token generation, storage, validation, and enhance security by hashing passwords, using HTTPS, and more.
+
+# ASP.NET Core MVC
+
+```
+md MyMvc
+cd MyMvc
+dotnet new mvc -f net9.0 --use-program-main --use-local-db --auth None
+dotnet build
+dotnet test
+dotnet run
+```
+
+http://localhost:5131/
