@@ -400,7 +400,10 @@ Right-click the folder, go to Properties, then Security, and add the IIS_IUSRS g
 </configuration>
 ```
 
+## Run swagger in release mode
+
+https://localhost/swagger/index.html
+
 # References
 
 https://workik.com/project/74656/ai_scripts
-
