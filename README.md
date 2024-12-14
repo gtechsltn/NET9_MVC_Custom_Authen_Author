@@ -357,3 +357,7 @@ Token
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwibmJmIjoxNzM0MTY1NzgwLCJleHAiOjE3MzQyNTIxODAsImlhdCI6MTczNDE2NTc4MH0.V8h2HadS3rbDEIoa1dFXrIn1vMwfVpXMSo0bgS2Tdfc"
 }
 ```
+
+# References
+
+https://workik.com/project/74656/ai_scripts
