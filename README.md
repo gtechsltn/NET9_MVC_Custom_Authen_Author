@@ -331,10 +331,12 @@ POST https://localhost:5001/api/auth/register
 
 Content-Type: application/json
 
+```
 {
-    "Username": "testuser",
-    "Password": "password123"
+  "username": "Admin",
+  "password": "Passw$rd@123"
 }
+```
 
 ## Login
 
@@ -342,7 +344,14 @@ POST https://localhost:5001/api/auth/login
 
 Content-Type: application/json
 
+```
 {
-    "Username": "testuser",
-    "Password": "password123"
+  "username": "Admin",
+  "password": "Passw$rd@123"
 }
+```
+
+Token
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwibmJmIjoxNzM0MTY1NjU5LCJleHAiOjE3MzQyNTIwNTksImlhdCI6MTczNDE2NTY1OX0.LUB4DdCYiwiD-ev1RHU-8HX77TV6V9hI5WMq8DD0w14
+```
