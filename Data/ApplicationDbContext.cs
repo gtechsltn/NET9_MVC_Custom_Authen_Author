@@ -8,7 +8,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=localhost;Database=MyMvcDb;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;");
+        optionsBuilder.UseSqlServer("Server=localhost;Database=MyMvc;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;");
     }
 
     public DbSet<Product> Products { get; set; }

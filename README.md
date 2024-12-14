@@ -236,7 +236,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 //appsettings.json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=MyMvcDb;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
+    "DefaultConnection": "Server=localhost;Database=MyMvc;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
   }
 }
 ```
@@ -275,7 +275,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=localhost;Database=MyMvcDb;Trusted_Connection=True;");
+        optionsBuilder.UseSqlServer("Server=localhost;Database=MyMvc;Trusted_Connection=True;");
     }
 
     public DbSet<Product> Products { get; set; }
@@ -298,18 +298,18 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
     public ApplicationDbContext CreateDbContext(string[] args)
     {
         var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-        optionsBuilder.UseSqlServer("Server=localhost;Database=MyMvcDb;Trusted_Connection=True;");
+        optionsBuilder.UseSqlServer("Server=localhost;Database=MyMvc;Trusted_Connection=True;");
         return new ApplicationDbContext(optionsBuilder.Options);
     }
 }
 ```
 
 ```
-"DefaultConnection": "Server=localhost;Database=MyMvcDb;Trusted_Connection=True;"
+"DefaultConnection": "Server=localhost;Database=MyMvc;Trusted_Connection=True;"
 ```
 
 ```
-"DefaultConnection": "Server=localhost;Database=MyMvcDb;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
+"DefaultConnection": "Server=localhost;Database=MyMvc;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
 ```
 
 # 4/ Authentication with User table

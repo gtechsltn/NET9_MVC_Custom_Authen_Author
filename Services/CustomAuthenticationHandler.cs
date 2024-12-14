@@ -16,7 +16,7 @@ public class CustomAuthenticationHandler : AuthenticationHandler<AuthenticationS
         // Get the Authorization header
         if (!Request.Headers.TryGetValue("Authorization", out var authHeader))
         {
-            return AuthenticateResult.NoResult();
+            return await Task.FromResult(AuthenticateResult.NoResult());
         }
 
         // Validate the token (this is a simple example)
@@ -25,7 +25,7 @@ public class CustomAuthenticationHandler : AuthenticationHandler<AuthenticationS
 
         if (user == null)
         {
-            return AuthenticateResult.Fail("Invalid token");
+            return await Task.FromResult(AuthenticateResult.Fail("Invalid token"));
         }
 
         var claims = new[] { new Claim(ClaimTypes.Name, user.Username) };
@@ -33,7 +33,7 @@ public class CustomAuthenticationHandler : AuthenticationHandler<AuthenticationS
         var principal = new ClaimsPrincipal(identity);
         var ticket = new AuthenticationTicket(principal, "Custom");
 
-        return AuthenticateResult.Success(ticket);
+        return await Task.FromResult(AuthenticateResult.Success(ticket));
     }
 
     private User ValidateToken(string token)
