@@ -353,5 +353,7 @@ Content-Type: application/json
 
 Token
 ```
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwibmJmIjoxNzM0MTY1NjU5LCJleHAiOjE3MzQyNTIwNTksImlhdCI6MTczNDE2NTY1OX0.LUB4DdCYiwiD-ev1RHU-8HX77TV6V9hI5WMq8DD0w14
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwibmJmIjoxNzM0MTY1NzgwLCJleHAiOjE3MzQyNTIxODAsImlhdCI6MTczNDE2NTc4MH0.V8h2HadS3rbDEIoa1dFXrIn1vMwfVpXMSo0bgS2Tdfc"
+}
 ```
