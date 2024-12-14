@@ -373,10 +373,34 @@ X-Api-Key: YourApiKey123
 ```
 
 # Publish
+
+## PowerShell Run as Administrator
 ```
-dotnet publish -c Release -o C:\inetpub\wwwroot\MyMvcApp
+md C:\inetpub\wwwroot\MyMvc
+cd D:\gtechsltn\NET9_MVC_Custom_Authen_Author
+dotnet publish -c Release -o C:\inetpub\wwwroot\MyMvc
+```
+
+## Set Permissions:
+
+Ensure that the IIS_IUSRS group has permission to access the published folder.
+
+Right-click the folder, go to Properties, then Security, and add the IIS_IUSRS group with Read & Execute permissions.
+
+## Configure web.config
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="aspNetCore" path="yourapp.dll" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified"/>
+    </handlers>
+    <aspNetCore processPath="dotnet" arguments=".\yourapp.dll" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" hostingModel="InProcess"/>
+  </system.webServer>
+</configuration>
 ```
 
 # References
 
 https://workik.com/project/74656/ai_scripts
+
