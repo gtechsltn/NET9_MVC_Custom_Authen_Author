@@ -234,7 +234,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 //appsettings.json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=MyApiDb;Trusted_Connection=True;"
+    "DefaultConnection": "Server=localhost;Database=MyMvcDb;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
   }
 }
 ```
@@ -296,4 +296,12 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
         return new ApplicationDbContext(optionsBuilder.Options);
     }
 }
+```
+
+```
+"DefaultConnection": "Server=localhost;Database=MyMvcDb;Trusted_Connection=True;"
+```
+
+```
+"DefaultConnection": "Server=localhost;Database=MyMvcDb;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
 ```
