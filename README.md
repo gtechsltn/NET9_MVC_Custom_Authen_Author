@@ -194,6 +194,8 @@ In a real application, you should implement proper token generation, storage, va
 md MyMvc
 cd MyMvc
 dotnet new mvc -f net9.0 --use-program-main --use-local-db --auth None
+dotnet add package Microsoft.AspNetCore.Authentication
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
 dotnet build
 dotnet test
 dotnet run
