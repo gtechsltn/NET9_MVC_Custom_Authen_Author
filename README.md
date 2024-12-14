@@ -201,4 +201,8 @@ dotnet test
 dotnet run
 ```
 
-http://localhost:5131/
+https://www.c-sharpcorner.com/article/how-to-add-jwt-bearer-token-authorization-functionality-in-swagger/
+
+https://medium.com/@deidra108/oauth-bearer-token-with-swagger-ui-net-6-0-86835e616deb
+
+https://localhost:7214/swagger/index.html
