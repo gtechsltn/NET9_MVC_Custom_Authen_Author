@@ -1,5 +1,17 @@
 # Custom Authentication and Authorization in an ASP.NET Core MVC + Web API using .NET 9.0
 
+https://github.com/gtechsltn/NF48_ConsoleApp_SQLServer_Logging_Debugging
+
+https://github.com/gtechsltn/EFCore_ConnectionString
+
+https://github.com/gtechsltn/DapperSelect
+
+https://github.com/gtechsltn/NET9
+
+https://github.com/gtechsltn/NET9/tree/master/NET9_ConsoleApp_Dapper_EFCore
+
+https://github.com/gtechsltn/NET9/tree/master/NET9_ConsoleApp_Logging_Log4Net
+
 # 1/ Custom Authentication and Authorization
 
 To implement custom Authentication and Authorization in an ASP.NET Core MVC + Web API using .NET 9.0, you'll need to follow several steps.
@@ -357,6 +369,52 @@ Token
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwibmJmIjoxNzM0MTY1NzgwLCJleHAiOjE3MzQyNTIxODAsImlhdCI6MTczNDE2NTc4MH0.V8h2HadS3rbDEIoa1dFXrIn1vMwfVpXMSo0bgS2Tdfc"
 }
 ```
+
+# Multiples Authen (Api Key + JWT)
+
+For JWT Authentication:
+```
+GET https://localhost:5001/api/jwt
+Authorization: Bearer your_jwt_token_here
+```
+
+For API Key Authentication:
+```
+GET https://localhost:5001/api/apikey
+X-Api-Key: YourApiKey123
+```
+
+# Publish
+
+## PowerShell Run as Administrator
+```
+md C:\inetpub\wwwroot\MyMvc
+cd D:\gtechsltn\NET9_MVC_Custom_Authen_Author
+dotnet publish -c Release -o C:\inetpub\wwwroot\MyMvc
+```
+
+## Set Permissions:
+
+Ensure that the IIS_IUSRS group has permission to access the published folder.
+
+Right-click the folder, go to Properties, then Security, and add the IIS_IUSRS group with Read & Execute permissions.
+
+## Configure web.config
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="aspNetCore" path="yourapp.dll" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified"/>
+    </handlers>
+    <aspNetCore processPath="dotnet" arguments=".\yourapp.dll" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" hostingModel="InProcess"/>
+  </system.webServer>
+</configuration>
+```
+
+## Run swagger in release mode
+
+https://localhost/swagger/index.html
 
 # References
 
