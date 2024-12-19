@@ -419,3 +419,19 @@ https://localhost/swagger/index.html
 # References
 
 https://workik.com/project/74656/ai_scripts
+
+## EF Core with SQL Server
+
+https://github.com/gtechsltn/EFCore_ConnectionString
+
+https://github.com/gtechsltn/NET9_EFCore_BulkInsert
+
+https://github.com/gtechsltn/NET9_ConsoleApp_Template
+
+https://medium.com/codex/securing-the-net-9-app-signup-login-jwt-refresh-tokens-and-role-based-access-with-postgresql-43df24fd0ba2
+
+## EF Core with PostgreSQL
+
+https://github.com/gtechsltn/RefreshToken
+
+https://github.com/gtechsltn/NetRefreshTokenDemo
